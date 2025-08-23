@@ -1,0 +1,34 @@
+<div ng-switch="vm.mode">
+  <div ng-switch-when="logout">
+    <h1 class="h4 mb-3">Vec ste prijavljeni</h1>
+    <button class="btn btn-outline-danger" ng-click="vm.logout()">Odjavi me</button>
+  </div>
+
+  <div ng-switch-default>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h1 class="h4">Prijava</h1>
+        <form class="card card-body" ng-submit="vm.login()">
+          <input class="form-control mb-2" placeholder="Email" ng-model="vm.loginData.email" required>
+          <input class="form-control mb-2" type="password" placeholder="Lozinka" ng-model="vm.loginData.password" required>
+          <button class="btn btn-primary" type="submit">Prijavi se</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h2 class="h5">Registracija</h2>
+        <form class="card card-body" ng-submit="vm.register()">
+          <div class="row g-2">
+            <div class="col-6"><input class="form-control" placeholder="Ime" ng-model="vm.registerData.firstName" required></div>
+            <div class="col-6"><input class="form-control" placeholder="Prezime" ng-model="vm.registerData.lastName" required></div>
+            <div class="col-12"><input class="form-control" placeholder="Email" ng-model="vm.registerData.email" required></div>
+            <div class="col-6"><input class="form-control" placeholder="Telefon" ng-model="vm.registerData.phone"></div>
+            <div class="col-6"><input class="form-control" placeholder="Korisničko ime" ng-model="vm.registerData.username"></div>
+            <div class="col-12"><input class="form-control" placeholder="Adresa" ng-model="vm.registerData.address"></div>
+            <div class="col-12"><input type="password" class="form-control" placeholder="Lozinka" ng-model="vm.registerData.password" required></div>
+          </div>
+          <button class="btn btn-success mt-2" type="submit">Registruj me</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

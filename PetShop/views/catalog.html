@@ -1,0 +1,52 @@
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h1 class="h3 mb-0">Katalog ljubimaca</h1>
+</div>
+
+<div class="dropdown mb-4">
+  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Filteri za pretragu
+  </button>
+  <div class="dropdown-menu p-3" style="min-width: 340px;">
+    <div class="filter-grid">
+      <input class="form-control" placeholder="Naziv" ng-model="vm.criteria.name" />
+      <select class="form-select" ng-model="vm.criteria.species">
+        <option value="">Vrsta</option>
+        <option ng-repeat="s in vm.speciesOptions" ng-value="s">{{s}}</option>
+      </select>
+      <select class="form-select" ng-model="vm.criteria.size">
+        <option value="">Velicina</option>
+        <option ng-repeat="s in vm.sizeOptions" ng-value="s">{{s}}</option>
+      </select>
+      <input class="form-control" placeholder="Poreklo" ng-model="vm.criteria.origin" />
+      <input class="form-control" type="number" placeholder="Minimalna starost" ng-model="vm.criteria.minAge" />
+      <input class="form-control" type="number" placeholder="Maksimalna starost" ng-model="vm.criteria.maxAge" />
+      <input class="form-control" type="number" placeholder="Cena do" ng-model="vm.criteria.maxPrice" />
+      <input class="form-control" type="number" placeholder="Min. ocena" step="0.1" ng-model="vm.criteria.minRating" />
+    </div>
+    <div class="d-flex gap-2 mt-3">
+      <button class="btn btn-sm btn-primary" ng-click="vm.search()">Pretrazi</button>
+      <button class="btn btn-sm btn-outline-primary" ng-click="vm.clear()">Poništi</button>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-12 col-sm-6 col-lg-4" ng-repeat="p in vm.filtered">
+    <div class="card pet-card h-100">
+      <img class="card-img-top"
+           ng-src="{{p.image}}"
+           alt="{{p.name}}"
+           onerror="this.onerror=null; this.src='assets/pets/fallback.svg';" />
+      <div class="card-body d-flex flex-column">
+        <h2 class="h5 mb-1">{{p.name}}</h2>
+        <div class="small text-muted mb-2">{{p.species}} • {{p.size}} • {{p.origin}} • {{p.age}} god</div>
+        <div class="mb-2"><span class="badge badge-rating">{{p.rating}}</span></div>
+        <div class="mt-auto d-flex gap-2 align-items-center">
+          <a class="btn btn-sm btn-outline-primary" href="#/pet/{{p.id}}">Detalji</a>
+          <button class="btn btn-sm btn-primary" ng-click="vm.reserve(p)">Rezervisi</button>
+          <span class="ms-auto fw-bold">{{p.price}}€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
