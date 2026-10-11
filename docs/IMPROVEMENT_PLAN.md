@@ -1,20 +1,19 @@
-# PetShop — Improvement Plan
+# Next steps
 
-This is a forward-looking checklist, not a feature list.
+The project is a browser-only AngularJS prototype, so I'm focusing on straightforward improvements.
 
-## Quick fixes
-- [ ] Remove the unused `/docs` route or implement its view/controller consistently.
-- [ ] Compress and resize oversized image assets (one JPG is approximately 17 MB).
-- [ ] Add screenshots of the actual UI and accessibility checks.
-- [ ] Add a simple smoke test for catalog routing and core user interactions.
+## Done
 
-## Engineering improvements
-- [ ] Separate demo authentication state from real authentication concepts, or migrate to a backend if that is a deliberate goal.
-- [ ] Sanitize and validate forms and user reviews.
-- [ ] Check responsive navigation and keyboard accessibility.
-- [ ] Add linting and lightweight automated tests.
-- [ ] Migrate away from deprecated AngularJS only if turning this into a maintained application is worth the effort.
+- Removed a route and script reference for a documentation page that wasn't in the project.
+- Added automated JavaScript syntax checks.
+- Documented the local demo data and the browser-based login/cart flow.
 
-## Portfolio scope
-- [ ] Keep documentation accurate: client-side prototype, localStorage data, rule-based chat assistant.
-- [ ] Preserve the original academic history and document future refactors separately.
+## Still to do
+
+- Resize the oversized pet images to speed up loading.
+- Add a couple of screenshots of the actual running app.
+- Test navigation, filters and cart behaviour in a browser.
+- Check keyboard navigation, form labels and mobile layout.
+- Decide whether to keep it as a finished course project or rebuild it using a maintained frontend framework.
+
+There isn't a backend or real user authentication here, so any future changes should keep that distinction clear.
