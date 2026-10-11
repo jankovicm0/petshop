@@ -1,65 +1,48 @@
-# PetShop — Client-side Pet Catalog Prototype
+# PetShop
 
-> University web development project built with AngularJS, HTML, CSS and JavaScript. This is a **browser-only demo** with local mock data, not a real storefront.
+A small pet catalog I built as a university web project. You can browse animals, filter the catalog, view details and manage a demo cart and profile.
+
+Everything runs in the browser; there's no backend or real payment system.
+
+## Built with
+
+JavaScript · AngularJS 1.8 · HTML · CSS · Bootstrap · localStorage
 
 ## Features
 
-- Pet catalog and detail pages
-- Search and filters by several pet attributes
-- Cart / reservation-style interactions
-- Profile, registration and login *simulation*
-- Ratings and reviews stored in the browser
-- Rule-based FAQ/chat assistant responding to a limited set of predefined prompts
+- Pet catalog with search and filters
+- Individual pet pages
+- Cart and reservation-style actions
+- Local profile and sign-in simulation
+- Reviews and ratings saved in the browser
+- A simple chat widget with predefined responses
 
-**Important:** Data is stored using `localStorage` in the visitor's browser. There is no backend database, real account authentication, payment processing or external AI/chat service.
-
-## Technologies
-
-- AngularJS 1.8.x and AngularJS routing
-- JavaScript (ES6), HTML5, CSS3
-- Bootstrap 5
-- Browser localStorage
-- Client-side asset/CDN dependencies
-
-## Structure
-
-```text
-PetShop/
-├── index.html                 # App entry
-├── app.js                     # Routes / app initialization
-├── controllers/               # Page controllers
-├── services/
-│   ├── data.service.js        # Sample data and UI state
-│   └── storage.service.js     # Browser storage helper
-├── views/                     # HTML page templates
-├── css/
-└── assets/pets/               # Pet imagery
-```
+The chat is rule-based rather than an AI service, and the app's login is only a demo. Data is saved to your browser's `localStorage`, so it isn't shared between users.
 
 ## Run locally
 
-No backend installation is required. Run a static HTTP server from the application directory:
+From the project root:
 
 ```bash
 cd PetShop
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`. A network connection is required for CDN-loaded JavaScript and stylesheets.
+Then open [http://localhost:8000](http://localhost:8000). The app loads AngularJS and other libraries from CDNs, so you'll need an internet connection.
 
-To reset demo data, clear this site's `localStorage` in your browser and refresh.
+Clear the site's browser storage if you want to reset the sample data.
 
-## Known limitations
+## Project structure
 
-- Login/registration are UI simulations; credentials are not securely authenticated.
-- Demo state is local to one browser, not shared between users.
-- The chat assistant uses hard-coded matching rules; it is not an AI assistant.
-- `app.js` references a `/docs` route, but the matching `views/docs.html` and controller implementation are missing from the current source tree.
-- One pet photo is larger than 17 MB; asset optimization would improve page loading.
-- AngularJS is a legacy framework; this is presented as an academic artifact, not a recommended production stack.
+```text
+PetShop/
+├── index.html
+├── app.js
+├── controllers/
+├── services/
+├── views/
+├── css/
+└── assets/pets/
+```
 
-See [IMPROVEMENT_PLAN.md](docs/IMPROVEMENT_PLAN.md) for next steps.
-
-## Project status
-
-**Academic prototype.** No claims of live payments, real customer accounts, production hosting or automated tests.
+This is a frontend prototype built with an older framework. If I extend it, the main work will be improving the demo authentication flow, cleaning up unused routes, optimising images and adding tests. Those ideas are tracked in [the improvement plan](docs/IMPROVEMENT_PLAN.md).
