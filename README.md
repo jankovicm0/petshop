@@ -17,7 +17,7 @@ JavaScript · AngularJS 1.8 · HTML · CSS · Bootstrap · localStorage
 - Reviews and ratings saved in the browser
 - A simple chat widget with predefined responses
 
-The chat is rule-based rather than an AI service, and the app's login is only a demo. Data is saved to your browser's `localStorage`, so it isn't shared between users.
+The chat uses predefined responses, and the app's login is only a demo. Data is saved to your browser's `localStorage`, so it isn't shared between users.
 
 ## Run locally
 
