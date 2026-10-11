@@ -11,7 +11,7 @@
         .when('/cart',    { templateUrl: 'views/cart.html',    controller: 'CartController',   controllerAs: 'vm' })
         .when('/profile', { templateUrl: 'views/profile.html', controller: 'ProfileController',controllerAs: 'vm' })
         .when('/auth',    { templateUrl: 'views/auth.html',    controller: 'AuthController',   controllerAs: 'vm' })
-        .when('/docs',    { templateUrl: 'views/docs.html',    controller: 'DocsController',   controllerAs: 'vm' })
+
         .otherwise({ redirectTo: '/' });
     }])
     .controller('ShellController', function($scope, DataService){
